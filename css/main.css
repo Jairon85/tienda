@@ -1,0 +1,257 @@
+
+.hidden {
+  display: none;
+}
+
+:root {
+    --clr-main: #4b33a8;
+    --clr-main-light: #785ce9;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+     }
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "rubik", sans-serif;
+  }
+
+
+  h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul{
+    margin: 0;
+    padding: 0;
+  }
+
+
+  ul{
+    list-style-type: none;
+  }
+
+
+  a{
+    text-decoration: none;
+  }
+
+  /* le da colunnas y filas a la pagina */
+  .wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: rgb(11, 165, 204);
+  }
+
+  /* le da 2 renglones y color de letra */
+  aside{
+    padding: 2rem;
+    padding-right: 0;    /*para que el fondoblanco toque con la imagen*/
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;                    /*pone los titulos uno a lado del otro*/
+    flex-direction: column;          /*hace encolumnar los titulos*/
+    justify-content: space-between;   /* hace que se separe el logo con los titulos*/
+  }
+
+  .logo{
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+
+  /*separa las letras del menu, las encolumna, distancia de 10px*/
+  .menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /*da color, fondo y la manito al pasar el cursor por los botones de todos los productos, computadoras, cables, redes y audio*/
+  .boton-menu{
+    background-color: transparent;
+    border: 0;
+    color: var(--clr-white);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;   /* es el grosor de las letras de menu*/
+    padding: 1rem;
+    width: 100%;
+ 
+  }
+
+/*fondo detras de las letras, color de las letras, ancho de las letras*/
+  .boton-menu.active{
+    background-color:#e2e2e2;
+    color:#08031b;
+    border-radius: 4px; 
+    position: relative;         /*borde redonde del titulo todos los producto*/
+  }
+
+ .boton-menu > bi.bi-hand-index{
+    transform: rotatez(90deg);
+  }
+
+
+  .boton-carrito{
+    
+    margin-top: 2rem;
+  }
+
+  .texto-footer{
+     color: black;
+     font-size: .80rem;
+  }
+
+  main{
+    background-color: #e2e2e2;
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 2rem;
+    
+  }
+
+
+.titulo-principal{
+ color: var(--clr-main);
+ margin-bottom: 2rem;           /* espacio de la imagen con el titulo*/
+}
+
+.contenedor-productos{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /*pone las imagenes una a lado de la otra*/
+  gap: 2rem;                               /* separa las imagenes*/
+  
+}
+
+.producto-imagen{
+  max-width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px black;
+  
+  width: 100%;
+  height: 150px;
+}
+
+/*hace cambios en el precio y titulo del precio, color de fondo y letra*/
+.producto-detalles{
+  background-color:#85b2ed;
+  color: #1d1313;
+  padding: .1rem;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+ flex-direction: column;
+  gap: .25rem;
+  
+}
+
+/*titulo del producto*/
+.producto-titulo{
+ font-size: 1rem;
+}
+
+/* boton agregar*/
+.producto-agregar{
+  border: 0;
+  background-color: #fbf6f6;
+  padding: .1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+
+ /* carrito*/
+
+ .contenedor-carrito{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem ;
+ }
+
+
+ .carrito-vacio{
+  color: var(--clr-main) ;
+  /*display: none;*/
+ }
+
+
+ .carrito-productos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+ }
+
+.carrito-producto {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: rgb(196, 188, 188);
+   color: #100d1c;
+   padding: .5rem ;
+   border-radius: 10px;
+   
+}
+
+.carrito-producto-imagen{
+  width: 4rem;
+  border-radius: 1rem;
+  
+}
+
+.carrito-producto-eliminar{
+  border: 0;
+  background-color: transparent;
+  color: #961818;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.carrito-acciones{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.carrito-acciones-vaciar{
+  border: 0;
+  background-color: #d65050;
+  padding: 10px;
+  border-radius: 10px;
+  color: #e6e6f3;
+  /*text-transform: uppercase;*/          /*pone las letras en mayuscula*/
+  cursor: pointer;
+}
+
+.carrito-acciones-derecha{
+  display: flex;
+}
+
+.carrito-acciones-total{
+  display: flex;
+  background-color: #c1b5b5;
+  padding: 10px;
+  border-radius: 5px;
+  color: #0c0c0d;
+  gap: 1rem;
+}
+
+.carrito-acciones-comprar{
+  border: 0;
+  background-color: #468dd5;
+  padding: 10px;
+  border-radius: 5px;
+  color: #e1dfea;
+  /*text-transform: uppercase;*/           /*pone las letras en mayuscula*/
+  cursor: pointer;
+}
+
+
